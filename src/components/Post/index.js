@@ -1,5 +1,14 @@
-import React from 'react'
-import { BodyRenderer } from '@phenomic/preset-react-app/lib/client'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { BodyRenderer } from '@phenomic/preset-react-app/lib/client';
+
+const propTypes = {
+  page: PropTypes.object,
+};
+
+const defaultProps = {
+  page: {},
+};
 
 const Post = ({ page }) => (
   <div>
@@ -10,6 +19,8 @@ const Post = ({ page }) => (
       </article>
     )}
   </div>
-)
+);
 
-export default Post
+Post.propTypes = propTypes;
+Post.defaultProps = defaultProps;
+export default Post;
