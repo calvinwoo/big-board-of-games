@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Route, browserHistory, Link } from 'react-router'
-import { createApp } from '@phenomic/preset-react-app/lib/client'
+import { createApp, renderApp } from '@phenomic/preset-react-app/lib/client'
 import { createContainer, query, BodyRenderer } from '@phenomic/preset-react-app/lib/client'
 
 const Post = ({ page }) => (
@@ -43,3 +43,7 @@ export default createApp(() => (
     <Route path="/post/*" component={ PostContainer } collection="posts" />
   </Router>
 ))
+
+if (module.hot) {
+  module.hot.accept(() => renderApp(routes))
+}
