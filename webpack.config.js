@@ -12,7 +12,7 @@ module.exports = config => ({
         require.resolve('webpack-hot-middleware/client'),
       process.env.PHENOMIC_ENV !== 'static' &&
         require.resolve('react-hot-loader/patch'),
-      './App.js',
+      './src/StaticApp.js',
     ].filter(item => item),
   },
   output: {
