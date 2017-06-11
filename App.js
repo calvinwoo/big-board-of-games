@@ -37,10 +37,17 @@ const HomeContainer = createContainer(Home, (props) => ({
   posts: query({ collection: 'posts' }),
 }))
 
+const PageError = () => (
+  <div>
+    Oh no, page not found :(
+  </div>
+)
+
 export default createApp(() => (
   <Router history={ browserHistory }>
     <Route path="/" component={ HomeContainer } />
     <Route path="/post/*" component={ PostContainer } collection="posts" />
+    <Route path="*" component={PageError} />
   </Router>
 ))
 
