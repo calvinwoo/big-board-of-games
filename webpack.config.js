@@ -3,8 +3,10 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 /* eslint-enable import/no-extraneous-dependencies */
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const nodeModules = path.join(process.cwd(), 'node_modules');
+
 module.exports = config => ({
   entry: {
     [config.bundleName]: [
@@ -14,6 +16,7 @@ module.exports = config => ({
         require.resolve('react-hot-loader/patch'),
       './src/StaticApp.js',
     ].filter(item => item),
+    GameEntry: './src/GameEntry.js',
   },
   output: {
     publicPath: '/', // @todo make this dynamic
@@ -50,6 +53,11 @@ module.exports = config => ({
       new webpack.HotModuleReplacementPlugin(),
     process.env.NODE_ENV === 'production' &&
       new webpack.optimize.UglifyJsPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Big Board of Games',
+      filename: 'game/index.html',
+      chunks: ['GameEntry'],
+    }),
   ].filter(item => item),
 
   resolve: {
