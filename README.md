@@ -13,7 +13,8 @@ Jerry
 [ ] take lots of pictures of games
 
 Calvin
-- [ ] Figure out engineering stack
+[ ] Figure out engineering stack
+[ ] User profiles, discussion, forms
 
 ### MVP MVP - End of July
 [ ] learn seo, pump out articles
