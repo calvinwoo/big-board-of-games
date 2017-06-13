@@ -13,6 +13,7 @@ const defaultProps = {
 const Home = ({ posts }) => (
   <div>
     <h1>Home</h1>
+    <a href="/game">Game page</a>
     <ul>
       {
         posts && posts.node && posts.node.list.map(post => (
