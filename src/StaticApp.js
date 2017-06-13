@@ -8,8 +8,8 @@ import TempLandingPage from './components/TempLandingPage';
 
 const routes = () => (
   <Router history={browserHistory}>
-    {/*<Route path="/" component={HomeContainer} />*/}
     <Route path="/" component={TempLandingPage} />
+    <Route path="/home" component={HomeContainer} />
     <Route path="/post/*" component={PostContainer} collection="posts" />
     <Route path="*" component={PageNotFound} />
   </Router>
